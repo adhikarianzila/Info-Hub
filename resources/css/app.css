@@ -1,0 +1,85 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
+.container1 {
+    max-width: 1100px;
+    width: 100%;
+}
+
+.carousel-view {
+    position: relative;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    color: black;
+    background: whitesmoke;
+    transition: all .5s ease-in-out;
+}
+
+.prev-btn,
+.next-btn {
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    position: absolute;
+    /* Ensure buttons are above the carousel items */
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+#item-list1 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.carousel-view .item-list1>* {
+    flex: 0 0 auto;
+}
+
+
+#item1 {
+    margin-right: 20px;
+
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+    max-width: 300px;
+    /* Set maximum width to control size */
+}
+
+@media only screen and (max-width: 1023px) {
+    .carousel-view.button {
+        display: none !important;
+    }
+
+    .carousel-view .item-list1 {
+        gap: 10px;
+        margin-bottom: 15px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel-view.item-list1 .item1 {
+        width: 280px;
+        height: 380px;
+    }
+}
